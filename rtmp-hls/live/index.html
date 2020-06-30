@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Live Video</title>
+    <link href="./lib/video7.3.0/video-js.min.css" rel="stylesheet">
+    <script src="./lib/video7.3.0/video.min.js"></script>
+    <script src="./lib/flash/videojs-flash.min.js"></script>
+</head>
+
+<body>
+    <video id="liveVideo" class="video-js" controls autoplay preload="auto" width="1000" object-fit: fill
+         data-setup="{}">
+        <source src="rtmp://localhost:1935/rtmplive/" type="rtmp/flv">
+    </video>
+</body>
+</html>
