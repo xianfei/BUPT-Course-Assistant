@@ -72,6 +72,13 @@
   color:#000000;
   text-align:left;
 }
+.flow_shape {
+}
+.box_1 {
+}
+.checkbox {
+  text-align:left;
+}
 .text_area {
   color:#000000;
   text-align:left;
@@ -113,5 +120,7 @@
 .shape {
 }
 .line {
+}
+.refs-image-colorful {
 }
 textarea, select, input, button { outline: none; }

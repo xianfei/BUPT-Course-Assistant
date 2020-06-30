@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Marked in the browser</title>
+    <style>
+        .xuanfu{
+	left: 0;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	z-index: 100;
+}
+    </style>
+</head>
+
+<body>
+    <textarea id="status" name="status" rows="5" class="xuanfu" onkeydown='EnterPress();'></textarea>
+    <div id="content">
+        Markdown笔记区：（连按两次回车写入笔记）<br>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script>
+        var lastkey=0;
+        function EnterPress(e) { //传入 event 
+            var e = e || window.event;
+            if (e.keyCode == 13 && lastkey == 13) {
+                document.getElementById('content').innerHTML += marked(document.getElementById('status').value);
+                document.getElementById('status').value = "";
+            }
+            lastkey = e.keyCode;
+        }
+
+    </script>
+</body>
+
+</html>

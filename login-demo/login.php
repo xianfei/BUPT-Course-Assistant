@@ -12,7 +12,7 @@ session_start();
                  
 	$_SESSION['username']=$name; 
    	$_SESSION['islogin']=1; 
-   header('refresh:0;url=index.php'); 
+   header('refresh:0;url=/'); 
                    exit;
              }else{
                 echo "用户名或密码错误";

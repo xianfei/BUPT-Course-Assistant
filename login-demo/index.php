@@ -37,6 +37,6 @@
     </head>
   
 <body>
- <iframe src="http://127.0.0.1:8888" height="100%" width="100%" frameborder="0"></iframe>
+ <iframe src="http://127.0.0.1:<?php if($username[0]=='t')echo '8888'; else echo'8887'; ?>" height="100%" width="100%" frameborder="0"></iframe>
 </body>   
 </html>
