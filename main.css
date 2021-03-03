@@ -1,0 +1,258 @@
+body {
+    background-color: #ffffff55;
+    font-family: 'LatoWeb', Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+}
+
+.mycard{
+    width: 50%;
+    background-color: #fffc;
+    margin-right: auto;  margin-left: auto;
+    margin-top: 20px;margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.abouttext{
+    color:#747474;
+    line-height: 30px;
+
+}
+
+#classtablecon table{
+    width: 50%;
+    table-layout:fixed;
+}
+
+.multiclass{
+    vertical-align:top; 
+    padding: 5px;
+    border-radius: 10px;
+    border: solid 1px #4b7ad3aa;
+    line-height: 22px;
+}
+
+.leftBut{
+    position: fixed;
+    left: 75px;
+    top:2px;
+    height: 36px;
+    line-height: 36px;
+    display: flex;
+    justify-content: flex-start;
+    -webkit-app-region: no-drag;
+    z-index: 20;
+}
+.rightBut{
+    position: fixed;
+    right: 5px;
+    top:2px;
+    height: 36px;
+    line-height: 36px;
+    display: flex;
+    -webkit-app-region: no-drag;
+    justify-content: flex-end;
+    z-index: 20;
+}
+
+.topBut{
+    width: 36px;
+    color: #4b4b4b;
+
+}
+
+.topText{
+    color: #4b4b4b;
+    font-size: 14px;
+    line-height: 36px;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+.topText:hover{
+    color: #4b7ad3;
+}
+
+.topBut i{
+    font-size: 22px;
+    margin: 9px;
+    --ggs: 0.8;
+}
+
+.topBut:hover{
+    color: #4b7ad3;
+}
+
+#class_table{
+    padding-bottom: 20px;
+}
+
+#class_table tbody tr td{
+    height: 45px;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.titlebar {
+    text-align: center;
+    display: inline-block;
+    position: fixed;
+    left: 70px;
+    top: 0px;
+    height: 40px;
+    line-height: 40px;
+    box-shadow: 3px 1px 7px rgba(150, 150, 150, 0.377);
+    color: #4b4b4b;
+    -webkit-app-region: drag;
+    z-index: 10;
+    backdrop-filter: blur(25px) saturate(180%);
+    background: #ffffff55;
+}
+
+.titlebar i{
+    font-size: 22px;
+    margin: 9px;
+}
+
+.titlebar span{
+    display: flex;
+    justify-content:center;
+}
+.largeNum{
+    font-size:32px;
+}
+
+.sidebar {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    padding-top: 40px;
+    height: 100%;
+    width: 70px;
+    background: #eeeeeeaa;
+}
+
+.mainbg {
+    position: fixed;
+    left: 70px;
+    top: 40px;
+    width: 100%;
+    height: 100%;
+    background: #fff4; 
+}
+
+.main {
+    position: relative;
+    margin-top: 45px;
+    margin-left: 70px;
+}
+
+.sidebar-item i {
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    --ggs:1.06;
+}
+
+.sidebar-item {
+    color: #4b4b4b;
+    text-align: center;
+    font-size: 12px;
+    margin: 10px;
+    margin-top: 20px;
+    line-height: 30px;
+}
+.sidebar-item:hover{
+    color: #4b7ad3;
+}
+
+.selected {
+    color: #4b7ad3;
+}
+
+#newstab #left {
+    position: fixed;
+    top: 40px;
+    left: 72px;
+    width: 310px;
+    margin: 0px;
+}
+
+#newstab #right {
+    background: #fff;
+    position: fixed;
+    top: 40px;
+    left: 370px;
+    padding-right: 5%;
+    overflow: scroll;
+}
+
+#detail {
+    padding-top: 40px;
+    padding-bottom: 50px;
+    max-width: 99%;
+    font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+}
+
+#detail img {
+    max-width: 80%;
+}
+
+.hide {
+    display: none;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    width: 100%;
+}
+
+.flex-container .flex-item {
+    position: relative;
+    flex: 1 1 auto;
+    border-radius: 10px;
+    max-width: 320px;
+    min-width: 240px;
+    height: 80px;
+    margin: 10px;
+    color: #555;
+    border: solid 1px #4b7ad3aa;
+    /* box-shadow: 3px 3px 10px rgba(150, 150, 150, 0.486);
+    background-color: rgba(176, 196, 222, 0.726); */
+}
+
+.score {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 54px;
+    line-height: 60px;
+}
+
+.cname {
+    position: absolute;
+    left: 10px;
+    top: 12px;
+    font-size: 18px;
+    max-width: 70%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    line-height: 28px;
+}
+
+.cdesc {
+    position: absolute;
+    left: 10px;
+    bottom: 12px;
+    font-size: 14px;
+    max-width: 70%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    line-height: 28px;
+}

@@ -1,0 +1,27 @@
+{
+  "name": "bupt-schedule",
+  "productName": "北邮课程小助手",
+  "description": "内测版",
+  "keywords": [],
+  "main": "./main.js",
+  "version": "0.1.0",
+  "author": "xianfei",
+  "license" : "GPL-3.0",
+  "scripts": {
+    "start": "electron .",
+    "package": "npm-run-all package:*",
+    "package:win32": "electron-packager ./ BUPT-Schedule --platform=win32 --arch=ia32 --out ./OutApp --download.mirrorOptions.mirror=https://npm.taobao.org/mirrors/electron/",
+    "package:win64": "electron-packager ./ BUPT-Schedule --platform=win32 --arch=x64 --out ./OutApp --download.mirrorOptions.mirror=https://npm.taobao.org/mirrors/electron/",
+    "package:mac64": "electron-packager ./ BUPT-Schedule --platform=darwin --arch=x64 --out ./OutApp --download.mirrorOptions.mirror=https://npm.taobao.org/mirrors/electron/",
+    "package:macarm": "electron-packager ./ BUPT-Schedule --platform=darwin --arch=arm64 --out ./OutApp --download.mirrorOptions.mirror=https://npm.taobao.org/mirrors/electron/"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.5",
+    "electron-find": "^1.0.6",
+    "superagent": "^6.1.0"
+  },
+  "devDependencies": {
+    "electron": "11.1.1",
+    "electron-packager": "^15.2.0"
+  }
+}

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Hello World!</title>
+    <link rel="stylesheet" type="text/css" href="mdui/css/mdui.css">
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <link rel="stylesheet" type="text/css" href="icons/all.css">
+    <link rel="stylesheet" type="text/css" href="Lato/latofonts.css">
+</head>
+
+<body class="mdui-theme-accent-indigo">
+    <div class="titlebar" id="titlebar">北邮生活小助手</div>
+    <div class="rightBut">
+        <div class="topBut" onclick="findInPage.openFindWindow()"><i class="gg-search" style="--ggs:0.78;top: -1px;"></i></div>
+        <div class="topBut" onclick="window.onload();"><i class="gg-sync" style="--ggs:0.8;top: 0px;"></i></div>
+        <div class="topBut" onclick="remote.getCurrentWindow().close()"><i class="gg-close" style="--ggs:1;top: -2px;right:2px"></i></div>
+    </div>
+    <div class="mainbg"></div>
+    <div class="sidebar">
+        <div class="sidebar-item selected" id="classtable">
+            <i class="gg-calendar-today"></i>课表
+        </div>
+        <div class="sidebar-item" id='grades'>
+            <i class="gg-smile-upside"></i>成绩
+        </div>
+        <div class="sidebar-item" id='news'>
+            <i class="gg-info"></i>通知
+        </div>
+        <div class="sidebar-item hide" id='eat'>
+            <i class="gg-bowl"></i>干饭
+        </div>
+        <div class="sidebar-item" id='setting'>
+            <i class="gg-profile"></i>设置
+        </div>
+    </div>
+    <div class="main hide" id='eattab'>
+        <h1>今儿个去食堂吃点儿啥？</h1>
+        <button id='randomeat'>随机推荐</button>
+    </div>
+    <div class="main hide" id='settingtab'>
+        <div class="mycard mdui-shadow-5" style="margin-top: 60px;">
+            <h1 style="margin-top: -5px;">BUPT Course Assistant</h1>
+            <span class="abouttext">in developing, beta 20210303</span><br>
+        </div>
+
+        <div class="mycard mdui-shadow-5">
+            <span class="selected">个人信息设定</span><br>
+                <div class="mdui-textfield">
+                    <label class="mdui-textfield-label">学号：</label>
+                    <input class="mdui-textfield-input"  type="text" id="sid"/>
+                  </div><div class="mdui-textfield">
+                    <label class="mdui-textfield-label">教务系统密码：</label>
+                    <input class="mdui-textfield-input"  type="password" id="jwpwd"/>
+                  </div><div class="mdui-textfield">
+                    <label class="mdui-textfield-label">VPN密码：</label>
+                    <input class="mdui-textfield-input"  type="password" id="webvpwd"/>
+                  </div>
+            <a href="javascript:void(0);" id="savesid" onclick="saveUser()" class="topText">保存</a>
+        </div>
+
+        <div class="mycard mdui-shadow-5">
+            <span class="selected">外观设定</span><br><br>
+            <label class="mdui-checkbox">
+                <input type="checkbox" id="enableTr"/>
+                <i class="mdui-checkbox-icon"></i>
+                禁用背景半透明 (macOS Only)
+              </label>
+        </div>
+
+        <div class="mycard mdui-shadow-5">
+            <span class="selected">关于</span><br><br>
+            <span class="abouttext">该软件不会收集您的任何信息<br>
+                且仅与*.bupt.edu.cn建立网络连接<br>
+                该项目是开源项目，您可以在GPLv3下自由修改、分发该软件<br>
+                https://github.com/xianfei/BUPT-Course-Assistant<br>
+                王衔飞  2021.2</span>
+                <a href="javascript:void(0);" onclick="remote.getCurrentWindow().toggleDevTools()" class="topText" style="margin-top: 10px;">打开/关闭开发者工具</a>
+
+        </div>
+
+        <div class="mycard mdui-shadow-5">
+            <span class="selected">开发进度</span><br><br>
+            <span class="abouttext">// todo: <br>
+        // 输入用户名密码及选择是否使用VPN  分离url.json<br>
+        // 优化成绩见面  选择列表与平铺展示方法<br>
+        // 自定义样式<br>
+        // Windows 关闭、最小化按钮<br>
+        // 课表、成绩本地缓存</span>
+        </div>
+    </div>
+    <div class="main hide" id='newstab'>
+        <div class="leftBut">
+            <div class="topText" onclick="switchNews(this)">切换到校内新闻</div>
+        </div>
+        <div id="left">
+            <iframe id="xxmh" allowTransparency="true" style="width: 100%;height: 500px;border: none;margin: 0;"
+                src="https://webapp.bupt.edu.cn/extensions/wap/news/list.html?type=tzgg" onload="xxmhOnload()"></iframe>
+        </div>
+        <div id="right">
+            <div id="detail">
+                <div style="width: 1500px;">&nbsp;</div>
+            </div>
+        </div>
+    </div>
+    <div class="main hide purewhite" id='gradestab'>
+        <div id="gradescon" style="position: fixed;top: 40px;overflow: scroll;">
+            <div class="flex-container" id="showgrades">
+            </div>
+        </div>
+    </div>
+    <div class="main" id='classtabletab'>
+        <div class="leftBut">
+            <div class="topBut" onclick="changeKcbWeb(-1)"><i class="gg-chevron-left" style="--ggs:1;top: -1px;"></i></div>
+            <div class="topText" id="currentweek">当前周</div>
+            <div class="topBut" onclick="changeKcbWeb(1)"><i class="gg-chevron-right" style="--ggs:1;top: -1px;"></i></div>
+        </div>
+        <div style="position: fixed;top: 40px;overflow: scroll;" id="classtablecon">
+        <table id="class_table">
+
+        </table>
+    </div>
+    </div>
+    <script src="./renderer.js">
+        // You can also require other files to run in this process
+    </script>
+</body>
+
+</html>
