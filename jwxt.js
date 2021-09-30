@@ -80,6 +80,7 @@ function loginJwxt(myagent, todo,error) {
         'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0.2 Safari/605.1.15',
     }
     myagent.set(headers).post(jwxt).send(jwLoginPostData).then(function (res) {
+        console.log(res.text)
         if (res.text.indexOf('密码提示为') !== -1) {
             throw new Error('教务系统密码错误');
         } else {

@@ -152,11 +152,11 @@ function showError(str) {
 function showSuccess(str) {
     $('#titlebar').html('<span><div><i class="gg-smile-mouth-open"></i></div><div>' + str + '</div></span>')
     setTimeout(() => {
-        $('#titlebar').fadeOut(2000, () => {
+        $('#titlebar').fadeOut(200, () => {
             $('#titlebar').html(title);
-            $('#titlebar').fadeIn(1000);
+            $('#titlebar').fadeIn(100);
         })
-    }, 1000)
+    }, 2000)
 }
 
 
@@ -205,6 +205,9 @@ window.onresize = () => {
     $('#classtablecon').css('width', '' + (remote.getCurrentWindow().getBounds().width - 82) + 'px')
     $('#class_table').css('width', '' + (remote.getCurrentWindow().getBounds().width - 82) + 'px')
     $('.titlebar').css('width', '' + (remote.getCurrentWindow().getBounds().width - 70) + 'px')
+    $('.mdui-textfield-input').css('color',$('body').css('color'))
+    $('.mdui-textfield-label').css('color',$('body').css('color'))
+
 }
 window.onresize();
 

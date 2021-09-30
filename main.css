@@ -1,22 +1,56 @@
-body {
-    background-color: #ffffff55;
-    font-family: 'LatoWeb', Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #000000bb;
+        --background-color: #86868655;
+        --title-bar-background-color: rgba(65, 65, 65, 0.781);
+        --mycard:#242424cc;
+        --select:#92b8ff;
+        --border:#c1d6ffda;
+        --title-bar:#fcfcfc;
+        --info-bg:#888;
+        color: #e9e9e9;
+        --color: #e9e9e9;
+        font-family: 'LatoWeb', Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    }
+
+    .abouttext{
+        color:#bebebe;
+        line-height: 30px;
+    }
 }
+
+@media (prefers-color-scheme: light) {
+    body {
+        --title-bar:#4b4b4b;
+        --select:#4b7ad3;
+        --mycard:#fffc;
+        --info-bg:#fff;
+        --border:#4b7ad3aa;
+        --title-bar-background-color: #ffffff55;
+        --background-color: #ffffff55;
+        background-color: #ffffff55;
+        --color: #111;
+        font-family: 'LatoWeb', Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    }
+
+    .abouttext{
+        color:#747474;
+        line-height: 30px;
+    }
+}
+
+
 
 .mycard{
     width: 50%;
-    background-color: #fffc;
+    background-color: var(--mycard);
     margin-right: auto;  margin-left: auto;
     margin-top: 20px;margin-bottom: 20px;
     padding: 20px;
     border-radius: 5px;
 }
 
-.abouttext{
-    color:#747474;
-    line-height: 30px;
 
-}
 
 #classtablecon table{
     width: 50%;
@@ -27,7 +61,7 @@ body {
     vertical-align:top; 
     padding: 5px;
     border-radius: 10px;
-    border: solid 1px #4b7ad3aa;
+    border: solid 1px var(--border);
     line-height: 22px;
 }
 
@@ -56,19 +90,19 @@ body {
 
 .topBut{
     width: 36px;
-    color: #4b4b4b;
+    color: var(--title-bar);
 
 }
 
 .topText{
-    color: #4b4b4b;
+    color: var(--title-bar);
     font-size: 14px;
     line-height: 36px;
     margin-left: 8px;
     margin-right: 8px;
 }
 .topText:hover{
-    color: #4b7ad3;
+    color: var(--select);
 }
 
 .topBut i{
@@ -78,11 +112,12 @@ body {
 }
 
 .topBut:hover{
-    color: #4b7ad3;
+    color: var(--select);
 }
 
 #class_table{
-    padding-bottom: 20px;
+    padding: 10px;
+    padding-bottom: 30px;
 }
 
 #class_table tbody tr td{
@@ -102,11 +137,11 @@ body {
     height: 40px;
     line-height: 40px;
     box-shadow: 3px 1px 7px rgba(150, 150, 150, 0.377);
-    color: #4b4b4b;
+    color: var(--title-bar);
     -webkit-app-region: drag;
     z-index: 10;
     backdrop-filter: blur(25px) saturate(180%);
-    background: #ffffff55;
+    background: var(--title-bar-background-color);
 }
 
 .titlebar i{
@@ -129,7 +164,7 @@ body {
     padding-top: 40px;
     height: 100%;
     width: 70px;
-    background: #eeeeeeaa;
+    background: var(--background-color);
 }
 
 .mainbg {
@@ -156,7 +191,7 @@ body {
 }
 
 .sidebar-item {
-    color: #4b4b4b;
+    color: var(--title-bar);
     text-align: center;
     font-size: 12px;
     margin: 10px;
@@ -164,11 +199,11 @@ body {
     line-height: 30px;
 }
 .sidebar-item:hover{
-    color: #4b7ad3;
+    color: var(--select);
 }
 
 .selected {
-    color: #4b7ad3;
+    color: var(--select);
 }
 
 #newstab #left {
@@ -180,7 +215,7 @@ body {
 }
 
 #newstab #right {
-    background: #fff;
+    background: var(--info-bg);
     position: fixed;
     top: 40px;
     left: 370px;
@@ -204,11 +239,14 @@ body {
 }
 
 .flex-container {
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     flex-grow: 1;
-    width: 100%;
+    width: 99%;
 }
 
 .flex-container .flex-item {
@@ -219,8 +257,7 @@ body {
     min-width: 240px;
     height: 80px;
     margin: 10px;
-    color: #555;
-    border: solid 1px #4b7ad3aa;
+    border: solid 1px var(--border);
     /* box-shadow: 3px 3px 10px rgba(150, 150, 150, 0.486);
     background-color: rgba(176, 196, 222, 0.726); */
 }
