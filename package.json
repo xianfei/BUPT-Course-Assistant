@@ -21,7 +21,7 @@
     "superagent": "^6.1.0"
   },
   "devDependencies": {
-    "electron": "11.1.1",
+    "electron": "11.5.0",
     "electron-packager": "^15.2.0"
   }
 }
